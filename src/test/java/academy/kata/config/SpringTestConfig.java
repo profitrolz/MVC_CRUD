@@ -36,7 +36,7 @@ public class SpringTestConfig {
     @Bean
     public EntityManager getEntityManager() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("academy.kata");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("academy.kata.h2");
         return emf.createEntityManager();
     }
 

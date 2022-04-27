@@ -3,6 +3,7 @@ package academy.kata.dao;
 import academy.kata.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -31,7 +32,7 @@ public class UserCrud implements Crud<User> {
 
     @Override
     public List<User> findAll() {
-        return null; //entityManager.createQuery("from users").getResultList();
+        return entityManager.createQuery("select u FROM User u", User.class).getResultList();
     }
 
     @Override
