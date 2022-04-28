@@ -4,9 +4,10 @@ import academy.kata.dao.UserCrud;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 public abstract class InMemoryDBTest {
-    @Autowired
+
     protected UserCrud userDao;
 
     @BeforeEach

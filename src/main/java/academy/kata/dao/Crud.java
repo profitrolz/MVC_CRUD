@@ -14,4 +14,6 @@ public interface Crud <T> {
     void delete(T t);
 
     T findById(Long id);
+
+    void deleteById(long id);
 }

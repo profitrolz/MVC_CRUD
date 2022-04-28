@@ -50,4 +50,13 @@ public class UserCrud implements Crud<User> {
         entityManager.remove(user);
         entityManager.getTransaction().commit();
     }
+
+    @Override
+    public void deleteById(long id) {
+        Query query = entityManager.createQuery("delete from User where id=:id");
+        query.setParameter("id", id);
+        entityManager.getTransaction().begin();
+        query.executeUpdate();
+        entityManager.getTransaction().commit();
+    }
 }

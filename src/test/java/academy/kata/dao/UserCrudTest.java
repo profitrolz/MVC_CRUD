@@ -4,12 +4,13 @@ import academy.kata.config.InMemoryDBTest;
 import academy.kata.model.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 
-
 class UserCrudTest extends InMemoryDBTest {
+
 
     @Test
     public void saveUser_WhenSaveUser_GetOk() {

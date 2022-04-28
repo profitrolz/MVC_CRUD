@@ -4,6 +4,7 @@ import academy.kata.dao.Crud;
 import academy.kata.model.User;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -15,7 +16,7 @@ public class UserService {
         this.userCrud = userCrud;
     }
 
-    public void create(User user) {
+    public void save(User user) {
         userCrud.save(user);
     }
 
@@ -27,7 +28,15 @@ public class UserService {
         return userCrud.findAll();
     }
 
+    public User findById(long id) {
+        return userCrud.findById(id);
+    }
+
     public void delete(User user) {
         userCrud.delete(user);
+    }
+
+    public void deleteById(long id) {
+        userCrud.deleteById(id);
     }
 }
