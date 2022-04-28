@@ -3,9 +3,9 @@ package academy.kata.dao;
 import academy.kata.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -19,7 +19,7 @@ public class UserCrud implements Crud<User> {
     }
 
     @Override
-    public void create(User user) {
+    public void save(User user) {
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
@@ -27,7 +27,9 @@ public class UserCrud implements Crud<User> {
 
     @Override
     public void update(User user) {
-
+        entityManager.getTransaction().begin();
+        entityManager.merge(user);
+        entityManager.getTransaction().commit();
     }
 
     @Override
@@ -36,7 +38,16 @@ public class UserCrud implements Crud<User> {
     }
 
     @Override
-    public void delete(User user) {
+    public User findById(Long id) {
+        Query query =  entityManager.createQuery("select u from User u where u.id=:id");
+        query.setParameter("id", id);
+        return (User) query.getSingleResult();
+    }
 
+    @Override
+    public void delete(User user) {
+        entityManager.getTransaction().begin();
+        entityManager.remove(user);
+        entityManager.getTransaction().commit();
     }
 }

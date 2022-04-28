@@ -1,13 +1,17 @@
 package academy.kata.dao;
 
+import academy.kata.model.User;
+
 import java.util.List;
 
 public interface Crud <T> {
-    void create (T t);
+    void save(T t);
 
     void update(T t);
 
     List<T> findAll();
 
     void delete(T t);
+
+    T findById(Long id);
 }

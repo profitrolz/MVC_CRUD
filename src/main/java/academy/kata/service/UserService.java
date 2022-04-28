@@ -16,7 +16,7 @@ public class UserService {
     }
 
     public void create(User user) {
-        userCrud.create(user);
+        userCrud.save(user);
     }
 
     public void update(User user) {
