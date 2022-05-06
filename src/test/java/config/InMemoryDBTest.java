@@ -1,6 +1,6 @@
 package config;
 
-import academy.kata.dao.UserCrud;
+import academy.kata.dao.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

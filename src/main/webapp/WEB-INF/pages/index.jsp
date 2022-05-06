@@ -23,9 +23,9 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
             <td> ${user.firstName}</td>
             <td> ${user.lastName}</td>
             <td>
-                <a href="/update?id=${user.id}">Edit</a>
+                <a href="${pageContext.request.contextPath}/update?id=${user.id}">Edit</a>
 
-                <a href="/delete?id=${user.id}">Delete</a>
+                <a href="${pageContext.request.contextPath}/delete?id=${user.id}">Delete</a>
             </td>
         </tr>
         </c:forEach>

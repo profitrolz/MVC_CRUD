@@ -1,7 +1,7 @@
 package academy.kata.dao;
 
-import config.InMemoryDBTest;
 import academy.kata.model.User;
+import config.InMemoryDBTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

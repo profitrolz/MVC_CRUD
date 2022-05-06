@@ -101,7 +101,7 @@
                     <configuration>
                         <username>admin</username>
                         <password>admin</password>
-                        <path>/</path>
+                        <path>/mvc</path>
                     </configuration>
                 </plugin>
                 <plugin>

@@ -1,5 +1,8 @@
 package academy.kata.mvc_crud;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -24,4 +27,5 @@ public class HelloServlet extends HttpServlet {
 
     public void destroy() {
     }
+
 }
