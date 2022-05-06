@@ -25,27 +25,33 @@ public class UserController {
         return "index";
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @PostMapping(value = "/save")
     public String save(@ModelAttribute("user") User user) {
         userService.save(user);
         return "redirect:/";
     }
 
-    @RequestMapping("/user")
+    @GetMapping("/user")
     public String showForm(Map<String, Object> model) {
         model.put("user", new User());
         return "user";
     }
 
-    @RequestMapping("/delete")
+    @GetMapping("/delete")
     public String deleteUser(@RequestParam Optional<Integer> id, Map<String, Object> model) {
         id.ifPresent(userService::deleteById);
         return "redirect:/";
     }
 
-    @RequestMapping("/update")
-    public String updateUser(@RequestParam Optional<Integer> id, Model model) {
+    @GetMapping("/update")
+    public String showFormUpdateUser(@RequestParam Optional<Integer> id, Model model) {
         model.addAttribute("user", userService.findById(id.orElseThrow(IllegalArgumentException::new)));
         return "user_update";
+    }
+
+    @PostMapping("/updateUser")
+    public String updateUser(@ModelAttribute("user") User user) {
+        userService.update(user);
+        return "redirect:/";
     }
 }

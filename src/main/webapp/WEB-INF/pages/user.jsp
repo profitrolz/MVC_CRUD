@@ -5,7 +5,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<h1>Add New user</h1>
+<h1>Add new user</h1>
 <form:form method="post" action="save" modelAttribute="user">
     <table>
         <tr>

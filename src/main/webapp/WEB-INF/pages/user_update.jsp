@@ -5,8 +5,8 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<h1>Add New user</h1>
-<form:form method="post" action="update" modelAttribute="user">
+<h1>Edit user</h1>
+<form:form method="post" action="updateUser" modelAttribute="user">
     <table>
         <tr>
             <td>Id :</td>

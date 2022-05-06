@@ -1,10 +1,9 @@
 package academy.kata.dao;
 
-import academy.kata.config.InMemoryDBTest;
+import config.InMemoryDBTest;
 import academy.kata.model.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.NoResultException;
 import java.util.List;

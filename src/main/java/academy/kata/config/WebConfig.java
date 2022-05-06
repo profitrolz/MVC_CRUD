@@ -1,6 +1,5 @@
 package academy.kata.config;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,13 +11,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan("academy.kata")
 public class WebConfig implements WebMvcConfigurer {
-
-    private final ApplicationContext applicationContext;
-
-    public WebConfig(ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
-    }
-
 
     @Bean(name = "viewResolver")
     public InternalResourceViewResolver getViewResolver() {

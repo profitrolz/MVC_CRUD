@@ -34,7 +34,7 @@ public class UserCrud implements Crud<User> {
 
     @Override
     public List<User> findAll() {
-        return entityManager.createQuery("select u FROM User u", User.class).getResultList();
+        return entityManager.createQuery("select u FROM User u order by u.id", User.class).getResultList();
     }
 
     @Override
